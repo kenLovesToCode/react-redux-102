@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+  --transition: all 400ms ease;
+}
+
+.c__button:hover, button:hover{
+  transition: var(--transition);
+}
