@@ -7,7 +7,7 @@ import { deleteCallback } from "../../features/modelSlice";
 
 export default function JobPositionTable() {
   const jobPositions =
-    useSelector((state) => state.modelReducer.jobPositions) || {};
+    useSelector((state) => state.modelReducer[JOB_POSITIONS]) || {};
   const dispatch = useDispatch();
 
   const editJobPosition = (id) => {

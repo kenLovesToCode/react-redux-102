@@ -5,7 +5,7 @@ import { deleteCallback } from "../../features/modelSlice";
 import { USERS } from "../../features/dataTypes";
 
 export default function UserTable() {
-  const users = useSelector((state) => state.modelReducer.users);
+  const users = useSelector((state) => state.modelReducer[USERS]) || {};
   const dispatch = useDispatch();
 
   const editCallback = (id) => {

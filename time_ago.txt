@@ -1,0 +1,29 @@
+DISPLAYING TIME AGO
+
+- yarn add date-fns
+- import {sub} from 'date-fns'
+- @initialState >>> ddate: sub(new Date(), {minutes: 10}).toISOString()
+- ? creating a new date >>> ddate: new Date().toISOString()
+- create new file TimeAgo.js
+============= TimeAgo.js ===============
+import { parseISO, formatDistanceToNow } from 'date-fns'
+
+const TimeAgo = ({ timestamp }) => {
+  let timeAgo = '';
+  if(timestamp){
+    const date = parseISO(timestamp);
+    const timePeriod = formatDistanceToNow(date);
+    timeAgo = `${timePeriod} ago`
+  }
+
+  return (
+    <span title={timestamp}>
+      &nbsp; <i>{timeAgo}</i>
+    </span>
+  )
+}
+
+export default TimeAgo;
+============= TimeAgo.js ===============
+
+- @component >>> <TimeAgo timestamp={ddate}/>
